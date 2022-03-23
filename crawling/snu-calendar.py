@@ -16,6 +16,16 @@ html = response.text
 soup = BeautifulSoup(html, "html.parser")
 calendar = soup.select_one("div.calendar-wrap")
 months = calendar.select("div.work-wrap")
-print(months[0])
+for month in months:
+    monthval = month.select_one("span.month-text").get_text()
+    print(monthval)
+    events = month.select("div.work")
+    for event in events:
+        dayval = event.select_one("p.day").get_text()
+        description = event.select_one("p.desc").get_text()
+        print(dayval)
+        print(description)
+
+
 
 
