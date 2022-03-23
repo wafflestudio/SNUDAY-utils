@@ -12,6 +12,10 @@ if response.status_code != 200:
     print(response.status_code)
     exit(0)
 
-print(response.text)
+html = response.text
+soup = BeautifulSoup(html, "html.parser")
+calendar = soup.select_one("div.calendar-wrap")
+months = calendar.select("div.work-wrap")
+print(months[0])
 
 
