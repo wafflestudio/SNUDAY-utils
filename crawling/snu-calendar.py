@@ -53,9 +53,9 @@ for month in months:
             startdaystr = parseday
             enddaystr = parseday
 
-        print(startyearstr + "-" + startmonthstr + "-" + startdaystr)
-        print(endyearstr + "-" + endmonthstr + "-" + enddaystr)
-        print(description)
+        startstr = (startyearstr + "-" + startmonthstr + "-" + startdaystr).strip()
+        endstr = (endyearstr + "-" + endmonthstr + "-" + enddaystr).strip()
+        print(description,startstr, endstr, sep="\t")
 
 
 
