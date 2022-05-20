@@ -16,15 +16,7 @@ for component in cal.walk("VEVENT"):
 
         print(
             component["SUMMARY"].to_ical().decode("utf-8"),
-            str(int(dt_start[:4]))
-            + "-"
-            + str(int(dt_start[4:6]))
-            + "-"
-            + str(int(dt_start[6:])),
-            str(int(dt_end[:4]))
-            + "-"
-            + str(int(dt_end[4:6]))
-            + "-"
-            + str(int(dt_end[6:])),
+            dt_start,
+            dt_end,
             sep="\t",
         )
